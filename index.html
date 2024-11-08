@@ -4,202 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gamer Vuqarstyle</title>
-    <style>
-        /* Ana stil ayarları */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: Arial, sans-serif;
-            color: #eaeaea; /* Cyberpunk renkleri */
-            overflow: hidden;
-            margin: 0;
-            padding: 0;
-        }
-
-        /* Arka plan resimleri için ayar */
-        .background {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-size: cover;
-            animation: fade 8s infinite alternate; /* Resimler arası geçiş animasyonu */
-        }
-
-        /* İki farklı arka plan resmini eklemek için sınıflar */
-        .background1 {
-            background-image: url('walpaperChanel.png'); /* İlk arka plan resmi */
-        }
-
-        .background2 {
-            background-image: url('walpaper.png'); /* İkinci arka plan resmi */
-            animation-delay: 7s; /* 4 saniye sonra ikinci resim aktif olacak */
-        }
-
-        /* Arka plan resmi geçiş animasyonu */
-        @keyframes fade {
-            0% { opacity: 1; }
-            100% { opacity: 0; }
-        }
-
-        /* Gamer bilgisi bölümü */
-        .gamer-info {
-            position: fixed;
-            top: 20px;
-            left: 20px;
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: flex-start;
-            padding: 10px;
-        }
-
-        /* Daire içindeki fotoğraf */
-        .gamer-photo {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%; /* Daire şekli */
-            border: 3px solid #00ffea; /* Cyberpunk çerçeve rengi */
-            background-image: url('Vüqar.png'); /* Gamer fotoğrafı */
-            background-size: cover;
-            background-position: center;
-            margin-right: 15px;
-        }
-
-        /* Gamer isim ve YouTube abone sayısı */
-        .gamer-name {
-            font-size: 30px;
-            color: #00ffea; /* Cyberpunk stil rengi */
-        }
-
-        .gamer-youtube-name {
-            font-size: 20px;
-            color: #ffa500; /* YouTube stili turuncu */
-        }
-
-        .gamer-subscribers {
-            font-size: 14px;
-            color: #eaeaea;
-        }
-
-        /* Sosyal medya bölümü */
-        .socials {
-            position: fixed;
-            right: 0;
-            top: 0;
-            width: 12%; /* Sağdan %12 genişlik */
-            height: 100%;
-            background-color: rgba(20, 20, 20, 0.8); /* Saydam siyah arka plan */
-            padding-top: 20px;
-            display: flex;
-            flex-direction: column; /* Sosyal medya bağlantılarını dikey hizalar */
-            align-items: center; /* Yatayda ortalar */
-            justify-content: flex-start; /* Üstten başlatır */
-        }
-
-        /* Sosyal medya ikonları */
-        .social-item {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 20px 0; /* Her bir bağlantı için biraz boşluk */
-            transition: transform 0.2s ease-in-out; /* Hover efekti için geçiş */
-        }
-
-        /* Sosyal medya ikonları */
-        .social-item img {
-            width: 40px; /* İkon boyutunu küçük yapalım */
-            height: 40px;
-            transition: transform 0.3s ease; /* Hover efekti */
-        }
-
-        /* Hover efekti */
-        .social-item:hover {
-            transform: scale(1.1); /* Hoverda büyüme efekti */
-        }
-
-        .social-item img:hover {
-            transform: scale(1.2); /* Hoverda ikonun büyümesi */
-        }
-
-        /* Mobil uyumlu tasarım için medya sorguları */
-        @media (max-width: 768px) {
-            .gamer-info {
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
-            }
-
-            .gamer-photo {
-                width: 120px;
-                height: 120px;
-                margin-right: 0;
-                margin-bottom: 10px;
-            }
-
-            .gamer-name {
-                font-size: 28px;
-            }
-
-            .gamer-youtube-name {
-                font-size: 18px;
-            }
-
-            .gamer-subscribers {
-                font-size: 14px;
-            }
-
-            .socials {
-                width: 15%; /* Daha geniş bir sosyal medya kutusu */
-                position: fixed;
-                right: 0;
-                top: 0;
-            }
-
-            .social-item {
-                margin: 15px 0; /* Daha az boşluk */
-            }
-
-            .social-item img {
-                width: 35px; /* Daha küçük ikonlar */
-                height: 35px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .gamer-photo {
-                width: 100px;
-                height: 100px;
-            }
-
-            .gamer-name {
-                font-size: 24px;
-            }
-
-            .gamer-youtube-name {
-                font-size: 16px;
-            }
-
-            .gamer-subscribers {
-                font-size: 12px;
-            }
-
-            .socials {
-                width: 18%; /* Sosyal medya kısmını biraz daha genişletelim */
-            }
-
-            .social-item img {
-                width: 30px; /* Çok küçük ikonlar */
-                height: 30px;
-            }
-        }
-
-    </style>
+    <link rel="stylesheet" href="styles.css"> <!-- CSS dosyasını dahil ettik -->
 </head>
 <body>
 
@@ -211,63 +16,57 @@
     <div class="gamer-info">
         <div class="gamer-photo"></div>
         <div>
-            <div class="gamer-name">vuqarstyle</div> <!-- Gamer ismi -->
-            <div class="gamer-youtube-name">YouTube: vuqarstyle</div> <!-- YouTube ismi -->
-            <div class="gamer-subscribers">Abone Sayısı: [Abone Sayısı]</div> <!-- Güncel abone sayısı -->
+            <div class="gamer-name">vuqarstyle</div>
+            <div class="gamer-youtube-name">YouTube: vuqarstyle</div>
+            <div class="gamer-subscribers">Abone Sayısı: [Abone Sayısı]</div>
+            <!-- Hakkında ve Admin butonları -->
+            <button class="button" onclick="toggleAbout()">Hakkında</button>
+            <button class="button" onclick="openAdmin()">Admin</button>
         </div>
+    </div>
+
+    <!-- Hakkında bilgi bölümü -->
+    <div id="aboutSection" class="about-section">
+        <p>41.45 de csgo da olan vuqar beyininin sağ tərəfindən zərbə alarağ həkimlər tərəfindən təkərostik xəstəliyi qoyulmuşdu------------------   SAYT DÜZƏNLƏNMƏ AŞAMASINDADI</p>
     </div>
 
     <!-- Sosyal medya bölümü -->
     <div class="socials">
         <div class="social-item">
-            <img src="Youtube.png" alt="YouTube"> <!-- YouTube ikonu -->
+            <a href="https://youtube.com/@vuqarstyle?si=mEjDdGdunDwOdVgI" target="_blank">
+                <img src="Youtube.png" alt="YouTube">
+            </a>
         </div>
         <div class="social-item">
-            <img src="Instagram.jpg" alt="Instagram"> <!-- Instagram ikonu -->
+            <a href="https://www.tiktok.com/@vuqarstyle?is_from_webapp=1&sender_device=pc" target="_blank">
+                <img src="TikTok.png" alt="TikTok">
+            </a>
         </div>
         <div class="social-item">
-            <img src="Discord.jpg" alt="Discord"> <!-- Discord ikonu -->
-        </div>
-        <div class="social-item">
-            <img src="Twich.jpg" alt="Twitch"> <!-- Twitch ikonu -->
-        </div>
-        <div class="social-item">
-            <img src="TikTok.png" alt="TikTok"> <!-- TikTok ikonu -->
+            <a href="https://www.instagram.com/vuqarquliyevpage/profilecard/?igsh=MXgyYnVpemkyeXl5dw==" target="_blank">
+                <img src="Instagram.png" alt="Instagram">
+            </a>
         </div>
     </div>
 
+    <!-- Alt bilgi -->
+    <div class="footer">Tərtibatçı: vuqarstyle</div>
+
+    <script>
+        function toggleAbout() {
+            const aboutSection = document.getElementById("aboutSection");
+            if (aboutSection.style.bottom === "20px") {
+                aboutSection.style.bottom = "-100px";
+            } else {
+                aboutSection.style.bottom = "20px";
+            }
+        }
+
+        function openAdmin() {
+            // Admin bölgesine yönlendirme
+            window.location.href = 'password.html';
+        }
+    </script>
+
 </body>
-
-<script>
-    // Kanalın ID'sini buraya yerleştirin (örnek: 'UC_x5XG1OV2P6uZZ5bV2YbF7')
-    var channelId = "UCuw-t6npKaR-IozSGNoxAWQ"; // Kanal ID'si burada olacak
-    var apiUrl = "www.youtube.com/@VuqarStyle" + channelId;
-
-    // Abone sayısını almak için fonksiyon
-    function fetchSubscriberCount() {
-        fetch(apiUrl)
-            .then(response => response.text())
-            .then(html => {
-                var parser = new DOMParser();
-                var doc = parser.parseFromString(html, "text/html");
-
-                // Abone sayısını almak için HTML öğesini seçiyoruz
-                var subscriberElement = doc.querySelector('yt-formatted-string.yt-subscription-button-subscriber-count-branded');
-                
-                if (subscriberElement) {
-                    var subscriberCount = subscriberElement.textContent.trim();
-                    document.querySelector('.gamer-subscribers').textContent = 'Abone Sayısı: ' + subscriberCount;
-                } else {
-                    document.querySelector('.gamer-subscribers').textContent = 'Abone Sayısı: Bilinmiyor';
-                }
-            })
-            .catch(error => {
-                console.log("Abone sayısı alınamadı:", error);
-                document.querySelector('.gamer-subscribers').textContent = 'Abone Sayısı: Bilinmiyor';
-            });
-    }
-
-    fetchSubscriberCount(); // Sayfa yüklendiğinde abone sayısını getir
-</script>
-
 </html>
