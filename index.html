@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GamerVuqarstyle</title>
+    <title>Gamer Vuqarstyle</title>
     <style>
         /* Ana stil ayarları */
         * {
@@ -16,6 +16,8 @@
             font-family: Arial, sans-serif;
             color: #eaeaea; /* Cyberpunk renkleri */
             overflow: hidden;
+            margin: 0;
+            padding: 0;
         }
 
         /* Arka plan resimleri için ayar */
@@ -45,46 +47,22 @@
             100% { opacity: 0; }
         }
 
-        /* Sağdaki sosyal medya bölümünün stili */
-        .socials {
-            position: fixed;
-            right: 0;
-            top: 0;
-            width: 15%; /* Sağdan %15 genişlik */
-            height: 100%;
-            background-color: rgba(20, 20, 20, 0.8); /* Saydam siyah arka plan */
-            padding-top: 20px;
-            text-align: center;
-        }
-
-        /* Sosyal medya bağlantıları */
-        .social-item {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 20px 0;
-            font-size: 18px;
-        }
-
-        .social-item img {
-            width: 38px; /* İkon boyutu */
-            height: 38px;
-            margin-right: 10px;
-        }
-
         /* Gamer bilgisi bölümü */
         .gamer-info {
             position: fixed;
             top: 20px;
             left: 20px;
             display: flex;
+            flex-direction: row;
             align-items: center;
+            justify-content: flex-start;
+            padding: 10px;
         }
 
         /* Daire içindeki fotoğraf */
         .gamer-photo {
-            width: 200px;
-            height: 200px;
+            width: 150px;
+            height: 150px;
             border-radius: 50%; /* Daire şekli */
             border: 3px solid #00ffea; /* Cyberpunk çerçeve rengi */
             background-image: url('Vüqar.png'); /* Gamer fotoğrafı */
@@ -95,19 +73,132 @@
 
         /* Gamer isim ve YouTube abone sayısı */
         .gamer-name {
-            font-size: 54px;
+            font-size: 30px;
             color: #00ffea; /* Cyberpunk stil rengi */
         }
 
         .gamer-youtube-name {
-            font-size: 25px;
+            font-size: 20px;
             color: #ffa500; /* YouTube stili turuncu */
         }
 
         .gamer-subscribers {
-            font-size: 16px;
+            font-size: 14px;
             color: #eaeaea;
         }
+
+        /* Sosyal medya bölümü */
+        .socials {
+            position: fixed;
+            right: 0;
+            top: 0;
+            width: 12%; /* Sağdan %12 genişlik */
+            height: 100%;
+            background-color: rgba(20, 20, 20, 0.8); /* Saydam siyah arka plan */
+            padding-top: 20px;
+            display: flex;
+            flex-direction: column; /* Sosyal medya bağlantılarını dikey hizalar */
+            align-items: center; /* Yatayda ortalar */
+            justify-content: flex-start; /* Üstten başlatır */
+        }
+
+        /* Sosyal medya ikonları */
+        .social-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 20px 0; /* Her bir bağlantı için biraz boşluk */
+            transition: transform 0.2s ease-in-out; /* Hover efekti için geçiş */
+        }
+
+        /* Sosyal medya ikonları */
+        .social-item img {
+            width: 40px; /* İkon boyutunu küçük yapalım */
+            height: 40px;
+            transition: transform 0.3s ease; /* Hover efekti */
+        }
+
+        /* Hover efekti */
+        .social-item:hover {
+            transform: scale(1.1); /* Hoverda büyüme efekti */
+        }
+
+        .social-item img:hover {
+            transform: scale(1.2); /* Hoverda ikonun büyümesi */
+        }
+
+        /* Mobil uyumlu tasarım için medya sorguları */
+        @media (max-width: 768px) {
+            .gamer-info {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .gamer-photo {
+                width: 120px;
+                height: 120px;
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+
+            .gamer-name {
+                font-size: 28px;
+            }
+
+            .gamer-youtube-name {
+                font-size: 18px;
+            }
+
+            .gamer-subscribers {
+                font-size: 14px;
+            }
+
+            .socials {
+                width: 15%; /* Daha geniş bir sosyal medya kutusu */
+                position: fixed;
+                right: 0;
+                top: 0;
+            }
+
+            .social-item {
+                margin: 15px 0; /* Daha az boşluk */
+            }
+
+            .social-item img {
+                width: 35px; /* Daha küçük ikonlar */
+                height: 35px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .gamer-photo {
+                width: 100px;
+                height: 100px;
+            }
+
+            .gamer-name {
+                font-size: 24px;
+            }
+
+            .gamer-youtube-name {
+                font-size: 16px;
+            }
+
+            .gamer-subscribers {
+                font-size: 12px;
+            }
+
+            .socials {
+                width: 18%; /* Sosyal medya kısmını biraz daha genişletelim */
+            }
+
+            .social-item img {
+                width: 30px; /* Çok küçük ikonlar */
+                height: 30px;
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -130,23 +221,18 @@
     <div class="socials">
         <div class="social-item">
             <img src="Youtube.png" alt="YouTube"> <!-- YouTube ikonu -->
-            <a href="https://youtube.com/@vuqarstyle?si=ch2zfekbwDaQE9Kv" target="_blank">YouTube</a>
         </div>
         <div class="social-item">
             <img src="Instagram.jpg" alt="Instagram"> <!-- Instagram ikonu -->
-            <a href="instagram.com/vuqarrrrrrr/?hl=tr" target="_blank">Instagram</a>
         </div>
         <div class="social-item">
             <img src="Discord.jpg" alt="Discord"> <!-- Discord ikonu -->
-            <a href="https://discord.com" target="_blank">Discord</a>
         </div>
         <div class="social-item">
             <img src="Twich.jpg" alt="Twitch"> <!-- Twitch ikonu -->
-            <a href="https://www.twitch.tv/vuqarstyletw/about" target="_blank">Twitch</a>
         </div>
         <div class="social-item">
             <img src="TikTok.png" alt="TikTok"> <!-- TikTok ikonu -->
-            <a href="https://www.tiktok.com/@vuqarstyle" target="_blank">TikTok</a>
         </div>
     </div>
 
@@ -172,17 +258,16 @@
                     var subscriberCount = subscriberElement.textContent.trim();
                     document.querySelector('.gamer-subscribers').textContent = 'Abone Sayısı: ' + subscriberCount;
                 } else {
-                    document.querySelector('.gamer-subscribers').textContent = 'Abone sayısı bulunamadı.';
+                    document.querySelector('.gamer-subscribers').textContent = 'Abone Sayısı: Bilinmiyor';
                 }
             })
             .catch(error => {
-                console.error('Bir hata oluştu:', error);
-                document.querySelector('.gamer-subscribers').textContent = 'Abone sayısı yüklenemedi.';
+                console.log("Abone sayısı alınamadı:", error);
+                document.querySelector('.gamer-subscribers').textContent = 'Abone Sayısı: Bilinmiyor';
             });
     }
 
-    // Sayfa yüklendiğinde abone sayısını çek
-    window.onload = fetchSubscriberCount;
+    fetchSubscriberCount(); // Sayfa yüklendiğinde abone sayısını getir
 </script>
 
 </html>
