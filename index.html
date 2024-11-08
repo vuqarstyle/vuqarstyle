@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gamer Vuqarstyle</title>
+    <style>
+        /* Ana stil ayarları */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            color: #eaeaea; /* Cyberpunk renkleri */
+            overflow: hidden;
+        }
+
+        /* Arka plan resimleri için ayar */
+        .background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            animation: fade 8s infinite alternate; /* Resimler arası geçiş animasyonu */
+        }
+
+        /* İki farklı arka plan resmini eklemek için sınıflar */
+        .background1 {
+            background-image: url('walpaperChanel.png'); /* İlk arka plan resmi */
+        }
+
+        .background2 {
+            background-image: url('walpaper.png'); /* İkinci arka plan resmi */
+            animation-delay: 7s; /* 4 saniye sonra ikinci resim aktif olacak */
+        }
+
+        /* Arka plan resmi geçiş animasyonu */
+        @keyframes fade {
+            0% { opacity: 1; }
+            100% { opacity: 0; }
+        }
+
+        /* Sağdaki sosyal medya bölümünün stili */
+        .socials {
+            position: fixed;
+            right: 0;
+            top: 0;
+            width: 15%; /* Sağdan %15 genişlik */
+            height: 100%;
+            background-color: rgba(20, 20, 20, 0.8); /* Saydam siyah arka plan */
+            padding-top: 20px;
+            text-align: center;
+        }
+
+        /* Sosyal medya bağlantıları */
+        .social-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 20px 0;
+            font-size: 18px;
+        }
+
+        .social-item img {
+            width: 38px; /* İkon boyutu */
+            height: 38px;
+            margin-right: 10px;
+        }
+
+        /* Gamer bilgisi bölümü */
+        .gamer-info {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        /* Daire içindeki fotoğraf */
+        .gamer-photo {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%; /* Daire şekli */
+            border: 3px solid #00ffea; /* Cyberpunk çerçeve rengi */
+            background-image: url('Vüqar.png'); /* Gamer fotoğrafı */
+            background-size: cover;
+            background-position: center;
+            margin-right: 15px;
+        }
+
+        /* Gamer isim ve YouTube abone sayısı */
+        .gamer-name {
+            font-size: 54px;
+            color: #00ffea; /* Cyberpunk stil rengi */
+        }
+
+        .gamer-youtube-name {
+            font-size: 25px;
+            color: #ffa500; /* YouTube stili turuncu */
+        }
+
+        .gamer-subscribers {
+            font-size: 16px;
+            color: #eaeaea;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Arka plan resimleri -->
+    <div class="background background1"></div>
+    <div class="background background2"></div>
+
+    <!-- Gamer bilgisi bölümü -->
+    <div class="gamer-info">
+        <div class="gamer-photo"></div>
+        <div>
+            <div class="gamer-name">vuqarstyle</div> <!-- Gamer ismi -->
+            <div class="gamer-youtube-name">YouTube: vuqarstyle</div> <!-- YouTube ismi -->
+            <div class="gamer-subscribers">Abone Sayısı: [Abone Sayısı]</div> <!-- Güncel abone sayısı -->
+        </div>
+    </div>
+
+    <!-- Sosyal medya bölümü -->
+    <div class="socials">
+        <div class="social-item">
+            <img src="Youtube.png" alt="YouTube"> <!-- YouTube ikonu -->
+            <a href="https://youtube.com/@vuqarstyle?si=ch2zfekbwDaQE9Kv" target="_blank">YouTube</a>
+        </div>
+        <div class="social-item">
+            <img src="Instagram.jpg" alt="Instagram"> <!-- Instagram ikonu -->
+            <a href="instagram.com/vuqarrrrrrr/?hl=tr" target="_blank">Instagram</a>
+        </div>
+        <div class="social-item">
+            <img src="Discord.jpg" alt="Discord"> <!-- Discord ikonu -->
+            <a href="https://discord.com" target="_blank">Discord</a>
+        </div>
+        <div class="social-item">
+            <img src="Twich.jpg" alt="Twitch"> <!-- Twitch ikonu -->
+            <a href="https://www.twitch.tv/vuqarstyletw/about" target="_blank">Twitch</a>
+        </div>
+        <div class="social-item">
+            <img src="TikTok.png" alt="TikTok"> <!-- TikTok ikonu -->
+            <a href="https://www.tiktok.com/@vuqarstyle" target="_blank">TikTok</a>
+        </div>
+    </div>
+
+</body>
+
+<script>
+    // Kanalın ID'sini buraya yerleştirin (örnek: 'UC_x5XG1OV2P6uZZ5bV2YbF7')
+    var channelId = "UCuw-t6npKaR-IozSGNoxAWQ"; // Kanal ID'si burada olacak
+    var apiUrl = "www.youtube.com/@VuqarStyle" + channelId;
+
+    // Abone sayısını almak için fonksiyon
+    function fetchSubscriberCount() {
+        fetch(apiUrl)
+            .then(response => response.text())
+            .then(html => {
+                var parser = new DOMParser();
+                var doc = parser.parseFromString(html, "text/html");
+
+                // Abone sayısını almak için HTML öğesini seçiyoruz
+                var subscriberElement = doc.querySelector('yt-formatted-string.yt-subscription-button-subscriber-count-branded');
+                
+                if (subscriberElement) {
+                    var subscriberCount = subscriberElement.textContent.trim();
+                    document.querySelector('.gamer-subscribers').textContent = 'Abone Sayısı: ' + subscriberCount;
+                } else {
+                    document.querySelector('.gamer-subscribers').textContent = 'Abone sayısı bulunamadı.';
+                }
+            })
+            .catch(error => {
+                console.error('Bir hata oluştu:', error);
+                document.querySelector('.gamer-subscribers').textContent = 'Abone sayısı yüklenemedi.';
+            });
+    }
+
+    // Sayfa yüklendiğinde abone sayısını çek
+    window.onload = fetchSubscriberCount;
+</script>
+
+</html>
